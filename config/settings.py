@@ -80,6 +80,10 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # },
     "default": {
         "ENGINE": "django.db.backends.postgresql",  # changed from sqlite
         "NAME": "postgres",  # development settings, will change in production
@@ -142,7 +146,8 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",  # this how admins will log in to the admin site
     "allauth.account.auth_backends.AuthenticationBackend",  # this how users log in
 ]
-LOGIN_REDIRECT_URL = "home"  # change to desired url name
+# LOGIN_REDIRECT_URL = "home"  # change to desired url name
+LOGIN_REDIRECT_URL = "auth"  # previously "home"
 LOGOUT_REDIRECT_URL = "home"  # change to desired url name
 ACCOUNT_SESSION_REMEMBER = True  # remember user via sessions
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False  # preferred UX
